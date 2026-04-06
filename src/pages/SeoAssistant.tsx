@@ -296,7 +296,7 @@ export default function SeoAssistant() {
         }
       });
 
-      if (response.text) {
+if (response.text) {
         try {
           const parsed = JSON.parse(response.text);
           setResult(parsed);
@@ -304,6 +304,8 @@ export default function SeoAssistant() {
           throw new Error('Ответ от нейросети получился слишком длинным и оборвался из-за лимитов. Пожалуйста, сократите объем входных данных (не вставляйте огромные таблицы целиком) и попробуйте снова.');
         }
       } else {
+        throw new Error('Пустой ответ от модели');
+      }
     } catch (err: any) {
       console.error(err);
       setError(err.message || 'Произошла ошибка при генерации данных.');
