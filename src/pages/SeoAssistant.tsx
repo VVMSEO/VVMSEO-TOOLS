@@ -297,11 +297,13 @@ export default function SeoAssistant() {
       });
 
       if (response.text) {
-        const parsed = JSON.parse(response.text);
-        setResult(parsed);
+        try {
+          const parsed = JSON.parse(response.text);
+          setResult(parsed);
+        } catch (parseErr) {
+          throw new Error('Ответ от нейросети получился слишком длинным и оборвался из-за лимитов. Пожалуйста, сократите объем входных данных (не вставляйте огромные таблицы целиком) и попробуйте снова.');
+        }
       } else {
-        throw new Error('Пустой ответ от модели');
-      }
     } catch (err: any) {
       console.error(err);
       setError(err.message || 'Произошла ошибка при генерации данных.');
