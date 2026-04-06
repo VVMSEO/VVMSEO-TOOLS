@@ -1,0 +1,5 @@
+{
+  "name": "Project Time Tracker",
+  "description": "A simple time tracker for projects and tasks with planned and actual time.",
+  "requestFramePermissions": ["notifications"]
+}
