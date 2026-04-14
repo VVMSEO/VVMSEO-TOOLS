@@ -1,5 +1,5 @@
 {
-  "name": "SEO Assistant Pro",
-  "description": "Превращает сырые заметки SEO-специалиста в структурированные данные для таблицы проекта.",
-  "requestFramePermissions": []
+  "name": "Project Time Tracker",
+  "description": "A simple time tracker for projects and tasks with planned and actual time.",
+  "requestFramePermissions": ["notifications"]
 }
